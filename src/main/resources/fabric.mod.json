@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "chibs-tech",
+	"version": "${version}",
+	"name": "chibs-tech",
+	"description": "This is my first ever mod made with Fabric",
+	"authors": [
+		"CHIBS_VT"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/chibs-tech/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "name.modid.ExampleMod",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "name.modid.ExampleModClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "name.modid.ExampleModDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"chibs-tech.mixins.json",
+		{
+			"config": "chibs-tech.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.10"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
